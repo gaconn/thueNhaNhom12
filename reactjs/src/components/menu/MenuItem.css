@@ -1,0 +1,18 @@
+.menu-item{
+    display: flex;
+    padding: 20px 10px;
+    color: aliceblue;
+}
+.menu-item-title{
+    padding: 0 10px 0 20px;
+    font-size: 1rem;
+}
+.menu-item-logo{
+    width: 40px;
+    height: auto;
+    background-image: none;
+}
+.menu-item:hover{
+    background-color: #666;
+    cursor: pointer;
+}
