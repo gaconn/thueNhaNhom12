@@ -1,4 +1,4 @@
-import { domain } from "./constaint";
+import { domain } from "./constant";
 import axios from "axios"
 
 class API{
@@ -9,6 +9,10 @@ class API{
     getAllNhaThue(){
         const url= domain+"/nhaThue/getAll";
         return axios.get(url)
+    }
+    addNhaThue(req){
+        const url= domain+"/nhaThue/addOne"
+        return axios.post(url, req);
     }
 }
 

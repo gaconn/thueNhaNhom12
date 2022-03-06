@@ -26,10 +26,12 @@ export const List= styled.ul`
     display: flex;
     flex-grow: 1;
     justify-content: center;
-    li{
+    li, li a{
         min-width: 60px;
         text-align: center;
         padding: 0 20px;
+        text-decoration: none;
+        color: #333 ;
         :hover{
             cursor: pointer;
             color: orange;

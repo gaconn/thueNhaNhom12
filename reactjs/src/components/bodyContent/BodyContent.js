@@ -4,7 +4,8 @@ import Conditions from "../conditions/Conditions"
 import Grid from "../Grid/Grid"
 import Thumb from "../thumb/Thumb"
 import { Wrapper } from "./BodyContent.style"
-
+import {domain} from "../../constant"
+import noimage from "../../images/noimage.jpg"
 // images
 import testHouse from "../../images/house_ikun.jpg"
 const data= [{name: "abc", address:"HCM"}, {name: "abc", address:"Hà Nội"}, {name: "abc", address:"Đà Nẵng"}]
@@ -34,7 +35,7 @@ const BodyContent = ({listData}) =>{
         <Grid header="Lựa chọn cho bạn">
             {
                 listData.map((item, index)=>{
-                    return <Thumb  src={testHouse} price={item.giathue} address={item.diachi} size={`${item.dientich}m2`} thumbId={index}/>
+                    return <Thumb key={index} src={item.images?domain+"/"+item.images.images[0]:noimage} price={item.giathue} address={item.diachi} size={`${item.dientich}m2`} thumbId={index}/>
 
                 })
             }

@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 const Thumb= ({src, price, address, size, thumbId})=>{
-    return <Link to={`${thumbId}`}>
+    return <Link to={`${thumbId}`} style={{textDecoration:"none"}}>
         <Wrapper>
             <Content>
                 <Image src={src} alt="house"  />

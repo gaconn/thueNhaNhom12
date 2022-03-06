@@ -9,9 +9,9 @@ const Menu = () =>{
             <Content>
                 <Logo src={logo} alt='logo' />
                 <List>
-                    <li>Home</li>
+                    <li><a href='/'>Home</a></li>
                     <li>About</li>
-                    <li>Sales</li>
+                    <li><a href='/post'>Đăng bài</a></li>
                     <li>Properties</li>
                 </List>
                 <Account>

@@ -33,8 +33,18 @@ export const Info= styled.div`
         padding-top: 10px;
     }
     .thumb-address, .thumb-size{
-        font-size: 0.7;
+        font-size: 0.7rem;
         color: #000;
-        padding-top: 10px;
+        padding-top:10px;
+        text-decoration: none;
+
+    }
+    .thumb-address{
+        font-size: 0.7rem;
+        overflow: hidden;
+        display: block;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
     }
 `;

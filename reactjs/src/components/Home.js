@@ -21,7 +21,7 @@ function Home(){
       setLoading(false)
     }
   },[])
-
+  console.log(nhaThue);
   if(loading) return <Loading />
     return <div className='container'>
     <Menu />
