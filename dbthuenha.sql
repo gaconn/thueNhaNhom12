@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1:3306
--- Thời gian đã tạo: Th2 27, 2022 lúc 08:12 AM
--- Phiên bản máy phục vụ: 5.7.31
--- Phiên bản PHP: 7.3.21
+-- Host: 127.0.0.1
+-- Generation Time: Mar 07, 2022 at 07:53 AM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.3.31
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,26 +18,24 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `dbthuenha`
+-- Database: `dbthuenha`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chunha`
+-- Table structure for table `chunha`
 --
 
-DROP TABLE IF EXISTS `chunha`;
-CREATE TABLE IF NOT EXISTS `chunha` (
+CREATE TABLE `chunha` (
   `tencn` varchar(100) CHARACTER SET utf8 NOT NULL,
   `tuoi` int(3) NOT NULL,
   `macn` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `sdt` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`macn`)
+  `sdt` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `chunha`
+-- Dumping data for table `chunha`
 --
 
 INSERT INTO `chunha` (`tencn`, `tuoi`, `macn`, `sdt`) VALUES
@@ -54,22 +52,20 @@ INSERT INTO `chunha` (`tencn`, `tuoi`, `macn`, `sdt`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
-DROP TABLE IF EXISTS `khachhang`;
-CREATE TABLE IF NOT EXISTS `khachhang` (
+CREATE TABLE `khachhang` (
   `tenkh` varchar(100) CHARACTER SET utf8 NOT NULL,
   `tuoi` int(3) NOT NULL,
   `makh` varchar(12) NOT NULL,
   `sdt` varchar(12) NOT NULL,
   `taikhoan` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `matkhau` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  PRIMARY KEY (`makh`)
+  `matkhau` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`tenkh`, `tuoi`, `makh`, `sdt`, `taikhoan`, `matkhau`) VALUES
@@ -86,11 +82,10 @@ INSERT INTO `khachhang` (`tenkh`, `tuoi`, `makh`, `sdt`, `taikhoan`, `matkhau`) 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `lichsuthue`
+-- Table structure for table `lichsuthue`
 --
 
-DROP TABLE IF EXISTS `lichsuthue`;
-CREATE TABLE IF NOT EXISTS `lichsuthue` (
+CREATE TABLE `lichsuthue` (
   `magd` varchar(12) NOT NULL,
   `makh` varchar(12) NOT NULL,
   `macn` varchar(12) NOT NULL,
@@ -98,12 +93,11 @@ CREATE TABLE IF NOT EXISTS `lichsuthue` (
   `ngaythue` varchar(12) NOT NULL,
   `ngaytra` varchar(12) NOT NULL,
   `tongtien` int(12) NOT NULL,
-  `ghichu` text CHARACTER SET utf8 NOT NULL,
-  PRIMARY KEY (`magd`)
+  `ghichu` text CHARACTER SET utf8 NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `lichsuthue`
+-- Dumping data for table `lichsuthue`
 --
 
 INSERT INTO `lichsuthue` (`magd`, `makh`, `macn`, `mant`, `ngaythue`, `ngaytra`, `tongtien`, `ghichu`) VALUES
@@ -116,30 +110,63 @@ INSERT INTO `lichsuthue` (`magd`, `makh`, `macn`, `mant`, `ngaythue`, `ngaytra`,
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhathue`
+-- Table structure for table `nhathue`
 --
 
-DROP TABLE IF EXISTS `nhathue`;
-CREATE TABLE IF NOT EXISTS `nhathue` (
+CREATE TABLE `nhathue` (
   `tieude` varchar(100) CHARACTER SET utf8 NOT NULL,
   `macn` varchar(12) NOT NULL,
   `diachi` varchar(100) CHARACTER SET utf8 NOT NULL,
   `giathue` int(12) NOT NULL,
   `mota` text CHARACTER SET utf8 NOT NULL,
   `mant` varchar(12) NOT NULL,
-  PRIMARY KEY (`mant`)
+  `images` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL CHECK (json_valid(`images`)),
+  `dientich` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Đang đổ dữ liệu cho bảng `nhathue`
+-- Dumping data for table `nhathue`
 --
 
-INSERT INTO `nhathue` (`tieude`, `macn`, `diachi`, `giathue`, `mota`, `mant`) VALUES
-('Cho thuê căn hộ tại chung cư ABC', '100000000000', '1 cao lỗ/ phương 4/ quận 8/ TP.HCM', 20000000, 'Đây là mô tả...', 'nt01'),
-('Cho thuê căn hộ tại chung cư XYZ', '200000000000', '2 cao lỗ/ phương 4/ quận 8/ TP.HCM', 15000000, 'Đây là mô tả...', 'nt02'),
-('Cho thuê căn hộ tại chung cư HHH', '300000000000', '3 cao lỗ/ phương 4/ quận 8/ TP.HCM', 20000000, 'Đây là mô tả...', 'nt03'),
-('Cho thuê căn hộ tại chung cư PGT', '400000000000', '4 cao lỗ/ phương 4/ quận 8/ TP.HCM', 18000000, 'Đây là mô tả...', 'nt04'),
-('Cho thuê căn hộ tại chung cư STU', '500000000000', '180 cao lỗ/ phương 4/ quận 8/ TP.HCM', 50000000, 'Đây là mô tả...', 'nt05');
+INSERT INTO `nhathue` (`tieude`, `macn`, `diachi`, `giathue`, `mota`, `mant`, `images`, `dientich`) VALUES
+('Cho thuê căn hộ tại chung cư ABC', '100000000000', '1 cao lỗ/ phương 4/ quận 8/ TP.HCM', 20000000, 'Đây là mô tả...', 'nt01', NULL, 25),
+('Cho thuê căn hộ tại chung cư XYZ', '200000000000', '2 cao lỗ/ phương 4/ quận 8/ TP.HCM', 15000000, 'Đây là mô tả...', 'nt02', NULL, 25),
+('Cho thuê căn hộ tại chung cư HHH', '300000000000', '3 cao lỗ/ phương 4/ quận 8/ TP.HCM', 20000000, 'Đây là mô tả...', 'nt03', NULL, 25),
+('Cho thuê căn hộ tại chung cư PGT', '400000000000', '4 cao lỗ/ phương 4/ quận 8/ TP.HCM', 18000000, 'Đây là mô tả...', 'nt04', NULL, 25),
+('Cho thuê căn hộ tại chung cư STU', '500000000000', '180 cao lỗ/ phương 4/ quận 8/ TP.HCM', 50000000, 'Đây là mô tả...', 'nt05', NULL, 25),
+('dfad', '0001', 'dfasdf', 324, 'fsdfds', '8ey22OV8Pb', '{\"images\":[\"uploads\\\\images\\\\1646532444563-22.png\"]}', 324),
+('bán nhà abc', '0001', '180 cao lỗ', 1000000, 'điện điện nước đầy đủ, có chỗ để xe free, gần chợ', 'jkh37svVeu', '{\"images\":[\"uploads\\\\images\\\\1646561218814-260022661_432991545114164_2817431171607018399_n.jpg\"]}', 18),
+('ban nha', '0001', '8 Võ Liêm Sơn', 1000000, '', 'PbTAhwAbHI', '{\"images\":[\"uploads\\\\images\\\\1646577353414-Capture.PNG\"]}', 19),
+('ban nha', '0001', '8 Võ Liêm Sơn', 1000000, '', 'PMaPZXPFcs', '{\"images\":[\"uploads\\\\images\\\\1646577353424-Capture.PNG\"]}', 19),
+('ban  1', '0001', '180 cao lỗ', 123, '123', 'p0dwESDKnu', '{\"images\":[\"uploads\\\\images\\\\1646577592787-IMG_20210719_072845.jpg\"]}', 123);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `chunha`
+--
+ALTER TABLE `chunha`
+  ADD PRIMARY KEY (`macn`);
+
+--
+-- Indexes for table `khachhang`
+--
+ALTER TABLE `khachhang`
+  ADD PRIMARY KEY (`makh`);
+
+--
+-- Indexes for table `lichsuthue`
+--
+ALTER TABLE `lichsuthue`
+  ADD PRIMARY KEY (`magd`);
+
+--
+-- Indexes for table `nhathue`
+--
+ALTER TABLE `nhathue`
+  ADD PRIMARY KEY (`mant`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

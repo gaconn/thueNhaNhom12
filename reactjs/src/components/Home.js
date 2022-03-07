@@ -6,11 +6,12 @@ import { useEffect, useState } from "react";
 function Home(){
   const [loading, setLoading]= useState(false)
   const [nhaThue, setNhaThue]= useState([]);
+  const [size, setSize]= useState({min:0, max:10000000})
   useEffect(()=>{
     try {
       setLoading(true)
       API.getAllChuNha().then((response)=>{
-        console.log(response.data);
+        
       })
       API.getAllNhaThue().then(res=>{
         setNhaThue(res.data.result);
@@ -21,7 +22,6 @@ function Home(){
       setLoading(false)
     }
   },[])
-  console.log(nhaThue);
   if(loading) return <Loading />
     return <div className='container'>
     <Menu />

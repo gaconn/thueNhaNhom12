@@ -10,6 +10,10 @@ class API{
         const url= domain+"/nhaThue/getAll";
         return axios.get(url)
     }
+    getNhaThue(id){
+        const url= domain+"/nhaThue/getById/"+id;
+        return axios.get(url)
+    }
     addNhaThue(req){
         const url= domain+"/nhaThue/addOne"
         return axios.post(url, req);
