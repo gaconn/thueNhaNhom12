@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 07:53 AM
+-- Generation Time: Mar 19, 2022 at 10:17 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -31,23 +31,17 @@ CREATE TABLE `chunha` (
   `tencn` varchar(100) CHARACTER SET utf8 NOT NULL,
   `tuoi` int(3) NOT NULL,
   `macn` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `sdt` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL
+  `sdt` varchar(12) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `chunha`
 --
 
-INSERT INTO `chunha` (`tencn`, `tuoi`, `macn`, `sdt`) VALUES
-('chunha1', 33, '100000000000', '000000000000'),
-('chunha2', 33, '200000000000', '000000000000'),
-('chunha3', 33, '300000000000', '000000000000'),
-('chunha4', 33, '400000000000', '000000000000'),
-('chunha5', 33, '500000000000', '000000000000'),
-('chunha6', 33, '600000000000', '000000000000'),
-('chunha7', 33, '700000000000', '000000000000'),
-('chunha8', 33, '800000000000', '000000000000'),
-('chunha9', 33, '900000000000', '000000000000');
+INSERT INTO `chunha` (`tencn`, `tuoi`, `macn`, `sdt`, `username`, `password`) VALUES
+('Đồng Đình Quân', 0, 'CctnhzMPTjGh', '0327881340', 'admin', '1234');
 
 -- --------------------------------------------------------
 
@@ -129,16 +123,18 @@ CREATE TABLE `nhathue` (
 --
 
 INSERT INTO `nhathue` (`tieude`, `macn`, `diachi`, `giathue`, `mota`, `mant`, `images`, `dientich`) VALUES
-('Cho thuê căn hộ tại chung cư ABC', '100000000000', '1 cao lỗ/ phương 4/ quận 8/ TP.HCM', 20000000, 'Đây là mô tả...', 'nt01', NULL, 25),
-('Cho thuê căn hộ tại chung cư XYZ', '200000000000', '2 cao lỗ/ phương 4/ quận 8/ TP.HCM', 15000000, 'Đây là mô tả...', 'nt02', NULL, 25),
-('Cho thuê căn hộ tại chung cư HHH', '300000000000', '3 cao lỗ/ phương 4/ quận 8/ TP.HCM', 20000000, 'Đây là mô tả...', 'nt03', NULL, 25),
-('Cho thuê căn hộ tại chung cư PGT', '400000000000', '4 cao lỗ/ phương 4/ quận 8/ TP.HCM', 18000000, 'Đây là mô tả...', 'nt04', NULL, 25),
-('Cho thuê căn hộ tại chung cư STU', '500000000000', '180 cao lỗ/ phương 4/ quận 8/ TP.HCM', 50000000, 'Đây là mô tả...', 'nt05', NULL, 25),
-('dfad', '0001', 'dfasdf', 324, 'fsdfds', '8ey22OV8Pb', '{\"images\":[\"uploads\\\\images\\\\1646532444563-22.png\"]}', 324),
-('bán nhà abc', '0001', '180 cao lỗ', 1000000, 'điện điện nước đầy đủ, có chỗ để xe free, gần chợ', 'jkh37svVeu', '{\"images\":[\"uploads\\\\images\\\\1646561218814-260022661_432991545114164_2817431171607018399_n.jpg\"]}', 18),
-('ban nha', '0001', '8 Võ Liêm Sơn', 1000000, '', 'PbTAhwAbHI', '{\"images\":[\"uploads\\\\images\\\\1646577353414-Capture.PNG\"]}', 19),
-('ban nha', '0001', '8 Võ Liêm Sơn', 1000000, '', 'PMaPZXPFcs', '{\"images\":[\"uploads\\\\images\\\\1646577353424-Capture.PNG\"]}', 19),
-('ban  1', '0001', '180 cao lỗ', 123, '123', 'p0dwESDKnu', '{\"images\":[\"uploads\\\\images\\\\1646577592787-IMG_20210719_072845.jpg\"]}', 123);
+('Nhà trọ quận 9', '0001', '1A Đ. Số 385, Thành phố, Thủ Đức, Thành phố Hồ Chí Minh, Việt Nam', 5000000, 'abcd', 'ceSvoEundefi', '{\"images\":[\"uploads\\\\images\\\\1646808460499-download (2).jfif\",\"uploads\\\\images\\\\1646808460500-download.jfif\",\"uploads\\\\images\\\\1646808460501-images (1).jfif\",\"uploads\\\\images\\\\1646808460502-images (2).jfif\",\"uploads\\\\images\\\\1646808460503-images.jfif\",\"uploads\\\\images\\\\1646808460504-luu-y-ve-phong-thuy-trong-nha-o.webp\"]}', 40),
+('Nhà trọ quận 9', '0001', '68 Đ3, Trường Thạnh, Quận 9, Thành phố Hồ Chí Minh, Việt Nam', 4000000, 'abcd', 'K5D8VCTdgs', '{\"images\":[\"uploads\\\\images\\\\1646808419636-images (2).jfif\",\"uploads\\\\images\\\\1646808419638-nha-cap-2.jpg\"]}', 30),
+('Nhà ở quận 10', '0001', '8 võ liêm sơn, phường 4, quận 8, TP.HCM', 2000000, 'rộng rãi thoáng mát', 'LEG0gJjLWa', '{\"images\":[\"uploads\\\\images\\\\1646808310251-nha-cap-2.jpg\",\"uploads\\\\images\\\\1646808310255-quy-dinh-ve-hoan-cong-khi-xay-dung-xong-nha-o--57022.jpg\",\"uploads\\\\images\\\\1646808310256-tim-hieu-ve-cac-loai-nha-o-viet-nam.jpg\"]}', 25),
+('Nhà ở quận 8', '0001', '180 cao lỗ, phường 4, quận 8, TP.HCM', 3000000, 'rộng rãi thoáng mát', 'M7yPOundefin', '{\"images\":[\"uploads\\\\images\\\\1646808266526-download (1).jfif\",\"uploads\\\\images\\\\1646808266527-download (2).jfif\"]}', 20),
+('Nhà ở quận 8', '0001', '180 cao lỗ, phường 4, quận 8, TP.HCM', 3000000, 'rộng rãi thoáng mát', 'dh2TnzxkWd', '{\"images\":[\"uploads\\\\images\\\\1646808263881-download (1).jfif\",\"uploads\\\\images\\\\1646808263882-download (2).jfif\"]}', 20),
+('Nhà ở quận 8', '0001', '180 cao lỗ, phường 4, quận 8, TP.HCM', 3000000, 'rộng rãi thoáng mát', 'PROzBHuZOo', '{\"images\":[\"uploads\\\\images\\\\1646808258063-download (1).jfif\",\"uploads\\\\images\\\\1646808258065-download (2).jfif\"]}', 20),
+('Nhà ở quận 8', '0001', '68 Đ3, Trường Thạnh, Quận 9, Thành phố Hồ Chí Minh, Việt Nam', 0, 'yyjlkk;', 'iNsefVX6Gb', '{\"images\":[\"uploads\\\\images\\\\1646816046628-download (1).jfif\",\"uploads\\\\images\\\\1646816046629-download (2).jfif\",\"uploads\\\\images\\\\1646816046630-download.jfif\",\"uploads\\\\images\\\\1646816046632-images (1).jfif\",\"uploads\\\\images\\\\1646816046633-images (2).jfif\",\"uploads\\\\images\\\\1646816046635-images.jfif\",\"uploads\\\\images\\\\1646816046638-luu-y-ve-phong-thuy-trong-nha-o.webp\",\"uploads\\\\images\\\\1646816046645-mau-nh-o-viet-nam-4.jpg\",\"uploads\\\\images\\\\1646816046651-nha-cap-2.jpg\",\"uploads\\\\images\\\\1646816046655-quy-dinh-ve-hoan-cong-khi-xay-dung-xong-nha-o--57022.jpg\",\"uploads\\\\images\\\\1646816046661-tim-hieu-ve-cac-loai-nha-o-viet-nam.jpg\"]}', 0),
+('Nhà ở quận 8', 'CctnhzMPTjGh', '180 cao lỗ, phường 4, quận 8, TP.HCM', 10000000, '', 'cO56UH1oLQ', '{\"images\":[\"\",\"uploads\\\\images\\\\1647593810318-Capture.PNG\",\"uploads\\\\images\\\\1647593810330-dfadfa.PNG\"]}', 50),
+('nhieu hinh', 'CctnhzMPTjGh', '180 cao lỗ', 3000000, '', 'onPuUnb2ER', '{\"images\":[\"uploads\\\\images\\\\1647594712986-download.jfif\",\"uploads\\\\images\\\\1647594712987-images (1).jfif\",\"uploads\\\\images\\\\1647594712989-images (2).jfif\"]}', 20),
+('bán nhà abc', 'CctnhzMPTjGh', '180 cao lỗ, phường 4, quận 8, TP.HCM', 2000000, '', 'Z6aBwl1Xmz', '{\"images\":[\"uploads\\\\images\\\\1647594661377-images (2).jfif\",\"uploads\\\\images\\\\1647594661377-nha-cap-2.jpg\",\"uploads\\\\images\\\\1647594661383-quy-dinh-ve-hoan-cong-khi-xay-dung-xong-nha-o--57022.jpg\"]}', 20),
+('Nhà ở quận 9', 'CctnhzMPTjGh', '68 Đ3, Trường Thạnh, Quận 9, Thành phố Hồ Chí Minh, Việt Nam', 3000000, '', 'OC6lerpBeV', '{\"images\":[\"uploads\\\\images\\\\1647594602330-images.jfif\",\"uploads\\\\images\\\\1647594602331-luu-y-ve-phong-thuy-trong-nha-o.webp\",\"uploads\\\\images\\\\1647594602332-mau-nh-o-viet-nam-4.jpg\"]}', 40),
+('Nhà ở quận 9', 'CctnhzMPTjGh', '68 Đ3, Trường Thạnh, Quận 9, Thành phố Hồ Chí Minh, Việt Nam', 3000000, '', 'UsdB5bHD6p', '{\"images\":[\"uploads\\\\images\\\\1647594512201-images.jfif\",\"uploads\\\\images\\\\1647594512203-luu-y-ve-phong-thuy-trong-nha-o.webp\",\"uploads\\\\images\\\\1647594512206-mau-nh-o-viet-nam-4.jpg\"]}', 40);
 
 --
 -- Indexes for dumped tables
@@ -148,7 +144,7 @@ INSERT INTO `nhathue` (`tieude`, `macn`, `diachi`, `giathue`, `mota`, `mant`, `i
 -- Indexes for table `chunha`
 --
 ALTER TABLE `chunha`
-  ADD PRIMARY KEY (`macn`);
+  ADD PRIMARY KEY (`macn`,`username`);
 
 --
 -- Indexes for table `khachhang`
