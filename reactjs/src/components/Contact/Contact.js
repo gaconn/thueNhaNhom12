@@ -11,7 +11,7 @@ const Contact = ({name, phone}) =>{
                 <div className="contact-username">{name}</div>
                 <div className="contact-activity">Hoạt động 19 giờ trước</div>
             </User>
-                <Details href="/detail">Chi tiết</Details>
+                <Details href="">Chi tiết</Details>
         </Content>
         <Params>
             <div  className="contact-param-item">
@@ -24,7 +24,7 @@ const Contact = ({name, phone}) =>{
             </div>
         </Params>
         <Call>
-            <div className="contact-phone-number">0123456789</div>
+            <div className="contact-phone-number">{phone}</div>
             <div className="contact-phone-icon">
                 <img src={call} alt="phone"></img>
             </div>

@@ -26,6 +26,7 @@ export const List= styled.ul`
     display: flex;
     flex-grow: 1;
     justify-content: center;
+    align-items: center;
     li, li a{
         min-width: 60px;
         text-align: center;

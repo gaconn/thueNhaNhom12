@@ -6,6 +6,7 @@ export const Wrapper= styled.div`
     box-shadow: 2px 2px 2px 2px rgba(0,0,0,0.1);
     width: 500px;
     height: 400px;
+    text-align: center;
     @media only screen and (min-width: 768px){
         width: 700px;
         height: 700px;
@@ -16,7 +17,6 @@ export const Wrapper= styled.div`
 export const Content= styled.div`
     position: relative;
     overflow: hidden;
-
     .image-slider-pre,.image-slider-next{
         position: absolute;
         top: 50%;
@@ -53,9 +53,10 @@ const slideIn= keyframes`
     }
 `
 export const Image= styled.img`
+    margin: auto;
     display: block;
     height: 400px;
-    max-width: 400px;
+    max-width: 100%;
     object-fit: contain;
     padding: 0 50px;
     animation: ${slideIn} 0.3s linear ;

@@ -5,6 +5,7 @@ export const Wrapper= styled.div`
     height: 60px;
     display: flex;
     justify-content: center;
+    margin: 30px 0;
 `;
 
 export const Spinner= styled.div`

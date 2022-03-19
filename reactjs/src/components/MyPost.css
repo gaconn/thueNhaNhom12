@@ -1,0 +1,10 @@
+.mypost-container{
+    margin-top: 100px;
+}
+
+.mypost-container th{
+    text-align: center;
+}
+.btn-action{
+    display: flex;
+}

@@ -1,20 +1,17 @@
-
 import './App.css';
-import Menu from './components/menu/Menu';
-import "boxicons"
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
-import Home from "./components/Home"
-import HouseInfo from './components/HouseInfo';
-import Post from './components/Post';
+import Header from './Components/Header';
+import Footer from './Components/Footer';
+
+
+import DieuHuong from './router/dieuhuong';
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/:id' element={<HouseInfo />} />
-        <Route path='/post' element={<Post />} />
-      </Routes>
-    </Router>
+    <div className="App" >
+      <Header/>
+      <DieuHuong/>
+      hello
+      <Footer/>
+    </div>
   );
 }
 

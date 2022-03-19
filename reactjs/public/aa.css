@@ -1,0 +1,45 @@
+
+.banner-top{
+    background: url(./image/poster1.png)no-repeat;
+    height: 245px;
+}
+.banner-top h1{
+    color: aqua;
+}
+.banner-top h2 {
+    color: aqua;
+}
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  
+  height: 300px;
+}
+.img-responsive2, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.img-responsive3, .thumbnail > img, .thumbnail a > img, .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    display: block;
+    width: 540px;
+    height: 300px;
+}
+.simpleCart_shelfItem{
+    margin-top: 10px;
+}
+.col-md-3{
+    margin-top: 20px;
+}
+#s{
+    color: red;
+}
+.row{
+    margin-bottom: 20px;
+}
+.hinh{
+    margin-right: 10px;
+}

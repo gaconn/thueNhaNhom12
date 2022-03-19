@@ -1,0 +1,22 @@
+.form{
+    max-width: 400px;
+    margin: 100px auto;
+    border-radius: 10px;
+    background-color: #eee;
+    padding: 20px;
+}
+.form-wrapper{
+    position: relative;
+}
+.auth-other{
+    float: right;
+    padding: 10px;
+    cursor: pointer;
+    
+}
+.auth-other:hover{
+    color: #999;
+}
+.login-btn{
+    margin-top: 10px;
+}

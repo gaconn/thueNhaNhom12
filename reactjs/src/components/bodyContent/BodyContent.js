@@ -35,7 +35,7 @@ const BodyContent = ({listData}) =>{
         <Grid header="Lựa chọn cho bạn">
             {
                 listData.map((item, index)=>{
-                    return <Thumb key={index} src={item.images?domain+"/"+item.images.images[0]:noimage} price={item.giathue} address={item.diachi} size={`${item.dientich}m2`} thumbId={item.mant}/>
+                    return <Thumb key={index} value={item}/>
 
                 })
             }

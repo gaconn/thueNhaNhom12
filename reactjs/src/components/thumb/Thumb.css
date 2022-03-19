@@ -1,0 +1,15 @@
+.listGroup div{
+    overflow: hidden;
+    display: block;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    font-size: 1.1rem;
+}
+.imageCard{
+    height: 250px;
+    object-fit: cover;
+}
+.listCard:hover{
+    box-shadow: 2px 2px 2px rgba(0,0, 0, 0.1);
+}

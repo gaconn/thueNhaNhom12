@@ -1,24 +1,20 @@
-import MenuItem from './MenuItem'
 import "./Menu.css"
-import logo from "../../images/png-transparent-logo-contracting-photography-logo-symbol.png"
-import {Wrapper, Content, Logo, List, Account} from "./Menu.style"
+import {Navbar, Container, Nav } from "react-bootstrap"
 const Menu = () =>{
-    const list ={}
     return (
-        <Wrapper>
-            <Content>
-                <Logo src={logo} alt='logo' />
-                <List>
-                    <li><a href='/'>Home</a></li>
-                    <li>About</li>
-                    <li><a href='/post'>Đăng bài</a></li>
-                    <li>Properties</li>
-                </List>
-                <Account>
-                    <a href='/login'>Login</a>
-                </Account>
-            </Content>
-        </Wrapper>
+        <Navbar bg="light" variant="light" sticky="top">
+            <Container>
+            <Navbar.Brand href="#home">Nhóm 12</Navbar.Brand>
+            <Nav className="me-auto">
+                <Nav.Link href="/">Home</Nav.Link>
+                <Nav.Link href="/post">Đăng bài</Nav.Link>
+                <Nav.Link href="#pricing">Pricing</Nav.Link>
+            </Nav>
+            <Nav className="">
+                <Nav.Link href="/login">Đăng nhập</Nav.Link>
+            </Nav>
+            </Container>
+        </Navbar>
     )
 }
 

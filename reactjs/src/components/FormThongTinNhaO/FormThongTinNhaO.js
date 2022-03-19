@@ -7,11 +7,11 @@ const FormThongTinNhaO = ({data, handleChange, handleSubmit}) =>{
                 <div className="title">Thông tin nhà ở</div>
                 <Info>
                     <Title>Tiêu đề</Title>
-                    <Input type="text" name="tieude" placeholder="Tiêu đề" value={data.tieude} onChange={handleChange}/>
+                    <Input type="text" name="tieude" placeholder="Tiêu đề" value={data.tieude} onChange={handleChange} required/>
                 </Info>
                 <Info>
                     <Title>Địa chỉ</Title>
-                    <Input type="text" name="diachi" placeholder="Địa chỉ" value={data.diachi} onChange={handleChange}/>
+                    <Input type="text" name="diachi" placeholder="Địa chỉ" value={data.diachi} onChange={handleChange} required/>
                 </Info>
                 <Info>
                     <Title>Giá thuê (vnd)</Title>
@@ -30,7 +30,7 @@ const FormThongTinNhaO = ({data, handleChange, handleSubmit}) =>{
                 </Info>
                 <Info>
                     <Title>Hình ảnh</Title>
-                    <Input type="file" name="hinhanh" multiple placeholder="Diện tích (m2)" onChange={handleChange}/>
+                    <Input type="file" name="hinhanh" multiple placeholder="Diện tích (m2)" onChange={handleChange} required/>
                 </Info>
                 <Info>
                     

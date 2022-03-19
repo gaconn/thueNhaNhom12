@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function Home(){
   const [loading, setLoading]= useState(false)
   const [nhaThue, setNhaThue]= useState([]);
-  const [size, setSize]= useState({min:0, max:10000000})
+  const [size, setSize]= useState({min:0, max:100000000})
   useEffect(()=>{
     try {
       setLoading(true)
@@ -22,8 +22,9 @@ function Home(){
       setLoading(false)
     }
   },[])
+  
   if(loading) return <Loading />
-    return <div className='container'>
+    return <div >
     <Menu />
     {loading===true && <Loading />}
     {nhaThue.length>0 && <BodyContent listData={nhaThue} />}

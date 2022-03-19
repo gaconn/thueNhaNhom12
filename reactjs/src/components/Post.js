@@ -1,10 +1,14 @@
 import { useState } from "react"
 import FormThongTinNhaO from "./FormThongTinNhaO/FormThongTinNhaO"
 import Alert from "./Alert/Alert"
-import Menu from "./menu/Menu"
 import API from "../API"
+
 const Post = ()=>{
-    const postDefault= {tieude: "", diachi:"", giathue:0, dientich: 0, mota: "", hinhanh: null};
+    if(!sessionStorage.getItem("username")&&!sessionStorage.getItem("iduser"))
+    {
+        window.location.href= "/login"
+    }
+    const postDefault= {macn: sessionStorage.getItem("iduser"),tieude: "", diachi:"", giathue:0, dientich: 0, mota: "", hinhanh: null};
     const [post, setPost]= useState(postDefault)
     const [success, setSuccess]= useState({show: false, state: null, message: ""});
     const handleChangeInput= (e)=>{
@@ -28,10 +32,10 @@ const Post = ()=>{
         }
         API.addNhaThue(data).then((res)=>{
             setSuccess({...success, show: true, state: res.data.success, message:res.data.message })
+            setPost(postDefault)
         })    
     }
     return <div className="container">
-        <Menu />
         {   success.show &&
             <Alert message={success.message} type={success.state ? "success": "fail"} />
         }

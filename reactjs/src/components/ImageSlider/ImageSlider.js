@@ -1,8 +1,14 @@
 import { Wrapper, Content, Image } from "./ImageSlider.style"
-import houseImage from "../../images/house_ikun.jpg";
+import noimage from "../../images/noimage.jpg"
+import 'boxicons'
 import { useState } from "react";
+import { domain } from "../../constant";
 const ImageSlider = ({images}) =>{
-    const numberImage= images.length;
+    var numberImage=0;
+    if(images !==null){
+        numberImage= images.length ;
+
+    }
     const [index, setIndex]= useState(0);
 
     const handlePreIndex = (e) =>{
@@ -30,7 +36,10 @@ const ImageSlider = ({images}) =>{
                 <box-icon type='solid' name='right-arrow'></box-icon>
             </span>
             <span className="number-image">{index+1}/{numberImage}</span>
-            <Image src={images[index]} alt="house image"/>
+            { 
+                numberImage>0 ? <Image src={domain+"/"+images[index]} alt="house image"/>
+                : <Image src={noimage} alt="house image"/>
+            }
         </Content>
     </Wrapper>
 }
